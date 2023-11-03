@@ -21,7 +21,7 @@ ftd.image-src cover-2:
 
 -- ftd.column:
 width: fill-container
-height.fixed.px: 800
+height.fixed.vh: 100
 min-height.fixed.px: 600
 height.fixed.vh if {ftd.device == "mobile"}: 100
 background.solid: #f9aa34
@@ -71,17 +71,17 @@ spacing.fixed.px: 20
 anchor.id: home
 
 -- ftd.text: $home.navbar-1
-role: $fira-code-size-20-400
+role: $fira-code-size-24-400
 color: #000
 link: $home.navbar-1-url
 
 -- ftd.text: $home.navbar-2
-role: $fira-code-size-20-400
+role: $fira-code-size-24-400
 color: #000
 link: $home.navbar-2-url
 
 -- ftd.text: $home.navbar-3
-role: $fira-code-size-20-400
+role: $fira-code-size-24-400
 color: #000
 link: $home.navbar-3-url
 
@@ -96,23 +96,21 @@ spacing.fixed.px: 20
 anchor.id: home
 
 -- ftd.text: $home.navbar-1
-role: $fira-code-size-20-400
+role: $fira-code-size-24-400
 color: #000
 link: $home.navbar-1-url
 
 -- ftd.text: $home.navbar-2
-role: $fira-code-size-20-400
+role: $fira-code-size-24-400
 color: #000
 link: $home.navbar-2-url
 
 -- ftd.text: $home.navbar-3
-role: $fira-code-size-20-400
+role: $fira-code-size-24-400
 color: #000
 link: $home.navbar-3-url
 
 -- end: ftd.column
-
-
 
 
 
@@ -137,18 +135,16 @@ ftd.image-src cover:
 
 -- ftd.column:
 width: fill-container
-height.fixed.px: 800
+height.fixed.vh: 100
 min-height.fixed.px: 600
 min-height.fixed.vh if {ftd.device == "mobile"}: 100
-margin-top.px: 50
+;; margin-top.px: 50
 align-content: center
 
 -- ftd.image:
 src: $hero.cover
 width.fixed.percent if {ftd.device == "desktop"}: 22
 height.fixed.percent if {ftd.device == "mobile"}: 45
-
-
 
 -- ftd.row:
 if: {ftd.device == "desktop"}
@@ -166,7 +162,7 @@ color:
 width.fixed.percent: 70
 
 -- ftd.text: $hero.description
-role: $fira-code-size-20-400
+role: $fira-code-size-24-400
 color:
 
 -- end: ftd.column
@@ -177,16 +173,17 @@ color:
 -- ftd.column:
 if: {ftd.device == "mobile"}
 width: fill-container
-padding-horizontal.percent: 5
-padding-top.percent: 5
+padding-horizontal.percent: 8
 spacing.fixed.px: 20
+align-content: center
 
 -- ftd.text: $hero.title
 role: $fira-code-size-48-600
 color:
+padding-top.px if {ftd.device == "mobile"}: 20
 
 -- ftd.text: $hero.description
-role: $fira-code-size-20-400
+role: $fira-code-size-24-400
 color:
 
 -- end: ftd.column
@@ -206,6 +203,217 @@ color:
 
 
 
+-- component card:
+caption title:
+body description:
+ftd.image-src cover:
+
+-- ftd.column:
+width: auto
+height: auto
+
+-- ftd.column:
+width.fixed.px: 350
+height.fixed.px: 450
+align-content: center
+
+-- ftd.image:
+src: $card.cover
+height.fixed.percent: 70
+
+-- ftd.text: $card.title
+role: $fira-code-size-24-600
+color:
+margin-top.px: 20
+
+-- ftd.text: $card.description
+role: $fira-code-size-24-400
+color:
+margin-bottom.px: 20
+
+-- end: ftd.column
+
+
+-- end: ftd.column
+
+-- end: card
+
+
+
+
+
+
+
+
+
+
+-- component content:
+caption title:
+string para-1:
+string para-2:
+
+-- ftd.column:
+width: fill-container
+height: auto
+padding-horizontal.percent: 8
+padding-vertical.px: 100
+
+-- ftd.text: $content.title
+role: $fira-code-size-48-600
+color:
+
+-- ftd.row:
+if: {ftd.device == "desktop"}
+width: fill-container
+height: auto
+padding-top.px: 50
+spacing.fixed.px: 50
+
+-- ftd.text: $content.para-1
+role: $fira-code-size-24-400
+color:
+
+-- ftd.text: $content.para-2
+role: $fira-code-size-24-400
+color:
+
+-- end: ftd.row
+
+
+-- ftd.column:
+if: {ftd.device == "mobile"}
+width: fill-container
+height: auto
+padding-top.px: 50
+spacing.fixed.px: 30
+
+-- ftd.text: $content.para-1
+role: $fira-code-size-24-400
+color:
+
+-- ftd.text: $content.para-2
+role: $fira-code-size-24-400
+color:
+
+-- end: ftd.column
+
+
+-- end: ftd.column
+
+-- end: content
+
+
+
+
+
+
+
+
+
+
+-- component footer:
+caption foot:
+string heading:
+string button-1:
+string button-2:
+string button-1-url:
+string button-2-url:
+boolean $button-1-hover: false
+boolean $button-2-hover: false
+
+-- ftd.column:
+width: fill-container
+height: auto
+padding-horizontal.percent: 8
+padding-vertical.px: 100
+background.solid: #000
+;; align-content: center
+
+-- ftd.text: $footer.heading
+padding-right.percent if {ftd.device == "desktop"}: 30
+role: $fira-code-size-48-700
+color: #f9aa34
+
+
+-- ftd.row:
+if: {ftd.device == "desktop"}
+spacing.fixed.px: 20
+margin-top.px: 45
+
+-- ftd.text: $footer.button-1
+role: $fira-code-size-16-400
+color: #fff
+background.solid: #c17b00
+padding-vertical.px: 12
+padding-horizontal.px: 32
+color if {footer.button-1-hover}: #c17b00
+background.solid if {footer.button-1-hover}: #fff
+$on-mouse-enter$: $ftd.set-bool($a = $footer.button-1-hover, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $footer.button-1-hover, v = false)
+link: $footer.button-1-url
+
+-- ftd.text: $footer.button-2
+role: $fira-code-size-16-400
+color: #000
+background.solid: #f9aa34
+padding-vertical.px: 12
+padding-horizontal.px: 32
+color if {footer.button-2-hover}: #f9aa34
+background.solid if {footer.button-2-hover}: #fff
+$on-mouse-enter$: $ftd.set-bool($a = $footer.button-2-hover, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $footer.button-2-hover, v = false)
+link: $footer.button-2-url
+
+-- end: ftd.row
+
+-- ftd.column:
+if: {ftd.device == "mobile"}   
+width: fill-container 
+spacing.fixed.px: 20
+margin-top.px: 80
+margin-bottom.percent: 45
+align-content: center
+
+-- ftd.text: $footer.button-1
+role: $fira-code-size-16-400
+color: #fff
+width: fill-container
+background.solid: #c17b00
+padding-vertical.px: 12
+padding-horizontal.px: 32
+text-align: center
+link: $footer.button-1-url
+
+-- ftd.text: $footer.button-2
+role: $fira-code-size-16-400
+color: #000
+width: fill-container
+text-align: center
+background.solid: #f9aa34
+padding-vertical.px: 12
+padding-horizontal.px: 32
+link: $footer.button-2-url
+
+-- end: ftd.column
+
+
+
+-- ftd.row:
+width: fill-container
+margin-top.percent: 20
+align-content: center
+
+-- ftd.text: $footer.foot
+role: $fira-code-size-16-400
+color: #f9aa34
+text-align: center
+
+-- end: ftd.row
+
+
+-- end: ftd.column
+
+-- end: footer
 
 
 
@@ -221,6 +429,26 @@ color:
 
 
 
+
+
+
+
+
+
+-- ftd.type fira-code-size-16-desktop:
+size.px: 16
+weight: 400
+font-family: $fira-code-assets.fonts.Fira-Code
+
+
+-- ftd.type fira-code-size-16-mobile:
+size.px: 16
+weight: 400
+font-family: $fira-code-assets.fonts.Fira-Code
+
+-- ftd.responsive-type fira-code-size-16-400:
+desktop: $fira-code-size-16-desktop
+mobile: $fira-code-size-16-mobile
 
 
 
@@ -244,20 +472,20 @@ mobile: $fira-code-size-120-mobile
 
 
 
--- ftd.type fira-code-size-20-desktop:
+-- ftd.type fira-code-size-24-desktop-4:
 size.px: 24
 weight: 400
 font-family: $fira-code-assets.fonts.Fira-Code
 
 
--- ftd.type fira-code-size-20-mobile:
+-- ftd.type fira-code-size-24-mobile-4:
 size.px: 24
 weight: 400
 font-family: $fira-code-assets.fonts.Fira-Code
 
--- ftd.responsive-type fira-code-size-20-400:
-desktop: $fira-code-size-20-desktop
-mobile: $fira-code-size-20-mobile
+-- ftd.responsive-type fira-code-size-24-400:
+desktop: $fira-code-size-24-desktop-4
+mobile: $fira-code-size-24-mobile-4
 
 
 
@@ -277,3 +505,41 @@ font-family: $fira-code-assets.fonts.Fira-Code
 -- ftd.responsive-type fira-code-size-48-600:
 desktop: $fira-code-size-48-desktop
 mobile: $fira-code-size-48-mobile
+
+
+
+
+
+-- ftd.type fira-code-size-24-desktop:
+size.px: 24
+weight: 600
+font-family: $fira-code-assets.fonts.Fira-Code
+
+
+-- ftd.type fira-code-size-24-mobile:
+size.px: 24
+weight: 600
+font-family: $fira-code-assets.fonts.Fira-Code
+
+-- ftd.responsive-type fira-code-size-24-600:
+desktop: $fira-code-size-24-desktop
+mobile: $fira-code-size-24-mobile
+
+
+
+
+
+-- ftd.type fira-code-size-48-desktop-7:
+size.px: 48
+weight: 700
+font-family: $fira-code-assets.fonts.Fira-Code
+
+
+-- ftd.type fira-code-size-48-mobile-7:
+size.px: 32
+weight: 700
+font-family: $fira-code-assets.fonts.Fira-Code
+
+-- ftd.responsive-type fira-code-size-48-700:
+desktop: $fira-code-size-48-desktop-7
+mobile: $fira-code-size-48-mobile-7

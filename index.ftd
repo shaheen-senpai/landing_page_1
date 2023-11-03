@@ -7,15 +7,19 @@
 
 
 
+
+
 -- component page:
 
 -- ftd.column:
 width: fill-container
 height if {ftd.device == "desktop"}: auto
 height if {ftd.device == "mobile"}: auto
+css: $assets.files.style.main.css
+classes: html
 types: 
 colors: 
-background.solid: 
+
 
 -- ftd.column:
 width: fill-container
@@ -23,6 +27,7 @@ height: auto
 height if {ftd.device == "mobile"}: auto
 
 ;; start of page
+
 
 
 ;; home component
@@ -38,12 +43,62 @@ navbar-3-url: #contact
 ;; home end
 
 
+
 ;; hero component
 -- lib.hero: Unleash Your Creativity
 cover: $assets.files.assets.human_main_3.svg
 
     Illuminate’s minimalistic design embraces the art of simplicity, allowing your content to shine and be the true star of your website. 
 ;; hero end
+
+
+
+-- ftd.row:
+width: fill-container
+min-height.fixed.vh: 100
+height: auto
+align-content: center
+spacing: space-evenly
+padding.px: 20
+wrap: true
+
+-- lib.card: Speed Optimized
+cover: $assets.files.assets.human_1.svg
+
+    Blazing Fast Load Times
+
+
+-- lib.card: Seamless Navigation
+cover: $assets.files.assets.human_2.svg
+
+    Smooth User Experience
+
+
+-- lib.card: Responsive Design
+cover: $assets.files.assets.human_3.svg
+
+    Flawless on All Devices
+
+-- end: ftd.row
+
+
+
+;; content component
+-- lib.content: Built for Every Scenario
+para-1: Whether it's an online store or a personal blog, Illuminate’s versatility makes it the perfect fit for any project.
+para-2: Customize to your heart's content and make your website truly unique with this adaptable template.
+;; end: content component
+
+
+
+;; footer component
+-- lib.footer: © Illuminate Template - Stunningly Simple - All Rights Reserved
+heading: Ready to Harness the Power of Illuminate? Start Your Journey Today!
+button-1: Get Started
+button-2: Learn More
+button-1-url: https://media.tenor.com/t7rftXtub88AAAAC/among-us.gif
+button-2-url: https://media.tenor.com/t7rftXtub88AAAAC/among-us.gif
+;; end: footer component
 
 
 
