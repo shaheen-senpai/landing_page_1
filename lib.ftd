@@ -15,6 +15,8 @@ string navbar-3:
 string navbar-1-url:
 string navbar-2-url:
 string navbar-3-url:
+ftd.image-src cover-1:
+ftd.image-src cover-2:
 
 
 -- ftd.column:
@@ -31,7 +33,7 @@ align-content: center
 id: home
 
 -- ftd.image:
-src: $assets.files.assets.human_main_1.svg
+src: $home.cover-1
 height.fixed.percent if {ftd.device == "desktop"}: 50
 height.fixed.percent if {ftd.device == "mobile"}: 35
 margin-bottom.px: 150
@@ -48,7 +50,7 @@ margin-bottom.percent if {ftd.device == "mobile"}: 80
 z-index: 1
 
 -- ftd.image:
-src: $assets.files.assets.human_main_2.svg
+src: $home.cover-2
 height.fixed.percent if {ftd.device == "desktop"}: 50
 height.fixed.percent if {ftd.device == "mobile"}: 35
 margin-bottom.px: 150
@@ -127,6 +129,83 @@ link: $home.navbar-3-url
 
 
 
+-- component hero:
+caption title:
+body description:
+ftd.image-src cover:
+
+
+-- ftd.column:
+width: fill-container
+height.fixed.px: 800
+min-height.fixed.px: 600
+min-height.fixed.vh if {ftd.device == "mobile"}: 100
+margin-top.px: 50
+align-content: center
+
+-- ftd.image:
+src: $hero.cover
+width.fixed.percent if {ftd.device == "desktop"}: 22
+height.fixed.percent if {ftd.device == "mobile"}: 45
+
+
+
+-- ftd.row:
+if: {ftd.device == "desktop"}
+width: fill-container
+padding-horizontal.percent: 15
+padding-top.percent: 3
+spacing: space-between
+align-content: center
+
+-- ftd.text: $hero.title
+role: $fira-code-size-48-600
+color:
+
+-- ftd.column:
+width.fixed.percent: 70
+
+-- ftd.text: $hero.description
+role: $fira-code-size-20-400
+color:
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+
+-- ftd.column:
+if: {ftd.device == "mobile"}
+width: fill-container
+padding-horizontal.percent: 5
+padding-top.percent: 5
+spacing.fixed.px: 20
+
+-- ftd.text: $hero.title
+role: $fira-code-size-48-600
+color:
+
+-- ftd.text: $hero.description
+role: $fira-code-size-20-400
+color:
+
+-- end: ftd.column
+
+
+
+-- end: ftd.column
+
+-- end: hero
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -166,16 +245,35 @@ mobile: $fira-code-size-120-mobile
 
 
 -- ftd.type fira-code-size-20-desktop:
-size.px: 20
+size.px: 24
 weight: 400
 font-family: $fira-code-assets.fonts.Fira-Code
 
 
 -- ftd.type fira-code-size-20-mobile:
-size.px: 20
+size.px: 24
 weight: 400
 font-family: $fira-code-assets.fonts.Fira-Code
 
 -- ftd.responsive-type fira-code-size-20-400:
 desktop: $fira-code-size-20-desktop
 mobile: $fira-code-size-20-mobile
+
+
+
+
+
+-- ftd.type fira-code-size-48-desktop:
+size.px: 48
+weight: 600
+font-family: $fira-code-assets.fonts.Fira-Code
+
+
+-- ftd.type fira-code-size-48-mobile:
+size.px: 32
+weight: 600
+font-family: $fira-code-assets.fonts.Fira-Code
+
+-- ftd.responsive-type fira-code-size-48-600:
+desktop: $fira-code-size-48-desktop
+mobile: $fira-code-size-48-mobile

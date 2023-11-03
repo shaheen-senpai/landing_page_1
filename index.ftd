@@ -27,6 +27,8 @@ height if {ftd.device == "mobile"}: auto
 
 ;; home component
 -- lib.home: ILLUMINATE
+cover-1: $assets.files.assets.human_main_1.svg
+cover-2: $assets.files.assets.human_main_2.svg
 navbar-1: Features
 navbar-2: Pricing
 navbar-3: Contact
@@ -36,10 +38,12 @@ navbar-3-url: #contact
 ;; home end
 
 
+;; hero component
+-- lib.hero: Unleash Your Creativity
+cover: $assets.files.assets.human_main_3.svg
 
-
-
-
+    Illuminate’s minimalistic design embraces the art of simplicity, allowing your content to shine and be the true star of your website. 
+;; hero end
 
 
 
