@@ -47,6 +47,8 @@ role: $fira-code-size-120-600
 color: #000
 padding-bottom.percent if {ftd.device == "desktop"}: 3
 margin-bottom.percent if {ftd.device == "mobile"}: 80
+css: $assets.files.style.main.css
+classes: animate-character
 z-index: 1
 
 -- ftd.image:
